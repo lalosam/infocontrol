@@ -1,0 +1,66 @@
+body {
+	background-color: hsla(142, 2%, 95%, 1.0);
+	font-size: 11;
+}
+
+.ui-widget {
+    font-size: 75%;
+ }
+.ui-widget .ui-widget {
+    font-size: 100%;
+ }
+
+.ui-layout-unit-header {
+	background: hsla(215, 44%, 46%, 1.0);
+	color: white;
+}
+
+#header .ui-layout-unit-content {
+	background: hsla(215, 44%, 46%, 1.0);
+	color: white;
+	font-size: 20px;
+}
+
+#right .ui-layout-unit-content {
+	background: hsla(142, 2%, 95%, 1.0);
+}
+
+#left .ui-layout-unit-content {
+	background: hsla(142, 2%, 95%, 1.0);
+}
+
+#center .ui-layout-unit-content {
+	background: hsla(142, 2%, 95%, 1.0);
+}
+
+#footer .ui-layout-unit-content {
+	background-color: hsla(215, 44%, 46%, 1.0);
+	color: white;
+	text-align: center;
+}
+
+.ui-layout-bd {
+	border: 0;
+	margin: 0;
+}
+
+.ui-layout-unit {
+	padding-top: 0 !important;
+	padding-right: 0 !important;
+	padding-bottom: 0 !important;
+	padding-left: 0 !important;
+}
+
+.ui-layout, .ui-layout-doc, .ui-layout-unit, .ui-layout-wrap,
+	.ui-layout-bd, .ui-layout-hd {
+	border: none;
+}
+
+.ui-layout-west {
+	z-index: 20 !important;
+	overflow: visible !important;
+}
+
+.ui-layout-west .ui-layout-unit-content {
+	overflow: visible !important;
+}

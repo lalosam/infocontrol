@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>InfoControl</title>
+	<h:outputStylesheet name="css/base.css" />
+</h:head>
+<h:body>
+	<p:layout fullPage="true">
+		<p:layoutUnit position="north" size="80" gutter="0" id="header">
+			<h:outputText value="InfoControl." />
+		</p:layoutUnit>
+
+		<p:layoutUnit position="south" size="30" gutter="0" id="footer">
+			<h:outputText value="South unit content." />
+		</p:layoutUnit>
+
+		<p:layoutUnit position="west" size="200" 
+			resizable="true" collapsible="true" gutter="2" id="left">
+			<f:facet name="header">
+				<h:outputText value="#{lefttitle}" />
+			</f:facet>
+			<ui:insert name="left-panel">Left panel</ui:insert>
+				
+		</p:layoutUnit>
+
+		<p:layoutUnit position="east" size="200" header="Right"
+			resizable="true" collapsible="true" effect="drop" gutter="2"
+			id="right">
+			<h:outputText value="Right unit content." />
+		</p:layoutUnit>
+
+		<p:layoutUnit position="center" gutter="0" id="center">
+			<ui:insert name="content">Put default content here, if any.</ui:insert>
+		</p:layoutUnit>
+	</p:layout>
+</h:body>
+</html>
