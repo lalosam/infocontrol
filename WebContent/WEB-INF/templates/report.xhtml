@@ -4,8 +4,8 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-	<h:form>
-		<p:tieredMenu style="width:180px" model="#{leftMenuMB.model}" />
-		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-	</h:form>
+	<p>Reports</p>
+	<h:outputText value="#{statusMB.currentModule}" />
+	<br/>
+	<h:outputText value="#{statusMB.action}" />
 </ui:composition>

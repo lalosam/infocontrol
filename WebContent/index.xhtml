@@ -4,11 +4,15 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-	<ui:define name="content">
-		<p>Here goes your view-specific content.</p>
-	</ui:define>
 	<ui:define name="left-panel">
 		<ui:include src="/WEB-INF/templates/left-menu.xhtml" />
 	</ui:define>
 	<ui:param name="lefttitle" value="Menu" />
+	<ui:define name="content">
+		<h:form id="formContent">
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
+			<ui:include src="/WEB-INF/templates/#{statusMB.urlModule}" />
+		</h:form>
+	</ui:define>
 </ui:composition>

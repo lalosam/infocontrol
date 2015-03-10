@@ -7,35 +7,74 @@
 <h:head>
 	<title>InfoControl</title>
 	<h:outputStylesheet name="css/base.css" />
+	<h:outputScript name="js/base.js" />
+	<meta name="_csrf" content="${_csrf.token}"/>
+    <meta name="_csrf_header" content="${_csrf.headerName}"/>
+    <meta name="_csrf_parameter" content="${_csrf.parameterName}"/>
 </h:head>
 <h:body>
-	<p:layout fullPage="true">
-		<p:layoutUnit position="north" size="80" gutter="0" id="header">
-			<h:outputText value="InfoControl." />
-		</p:layoutUnit>
+		<h:form id="globalForm">
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+		<p:growl id="messages" showDetail="true" escape="false" />
+		</h:form>
+		<p:layout fullPage="true">
+			<p:layoutUnit position="north" size="80" gutter="0" id="header">
+				<p:outputPanel>
+					<div class="ui-grid ui-grid-responsive">
+						<div class="ui-grid-row">
+							<div class="ui-grid-col-4">
+								<h:outputText value="InfoControl." />
+							</div>
+							<div class="ui-grid-col-4"></div>
+							<div class="ui-grid-col-4">
+								<div class="ui-grid ui-grid-responsive">
+									<div class="ui-grid-row">
+										<h:outputText value="#{headerMB.name}" />
+									</div>
+									<div class="ui-grid-row">
+										<h:outputText value="#{headerMB.username}" />
+									</div>
+									<div class="ui-grid-row">
+										<form method="post" action="/InfoControl/logout">
+											<input type="submit" value="Logout" /> 
+											<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</p:outputPanel>
 
-		<p:layoutUnit position="south" size="30" gutter="0" id="footer">
-			<h:outputText value="South unit content." />
-		</p:layoutUnit>
 
-		<p:layoutUnit position="west" size="200" 
-			resizable="true" collapsible="true" gutter="2" id="left">
-			<f:facet name="header">
-				<h:outputText value="#{lefttitle}" />
-			</f:facet>
-			<ui:insert name="left-panel">Left panel</ui:insert>
-				
-		</p:layoutUnit>
+			</p:layoutUnit>
 
-		<p:layoutUnit position="east" size="200" header="Right"
-			resizable="true" collapsible="true" effect="drop" gutter="2"
-			id="right">
-			<h:outputText value="Right unit content." />
-		</p:layoutUnit>
+			<p:layoutUnit position="south" size="30" gutter="0" id="footer">
+				<h:outputText value="South unit content." />
+			</p:layoutUnit>
 
-		<p:layoutUnit position="center" gutter="0" id="center">
-			<ui:insert name="content">Put default content here, if any.</ui:insert>
-		</p:layoutUnit>
-	</p:layout>
+			<p:layoutUnit position="center" gutter="0" id="center">
+				<p:outputPanel style="margin:10px" id="moduleContent">
+					<ui:insert name="content">Put default content here, if any.</ui:insert>
+				</p:outputPanel>
+			</p:layoutUnit>
+
+			<p:layoutUnit position="west" size="200" resizable="true"
+				collapsible="true" gutter="2" id="left">
+				<f:facet name="header">
+					<h:outputText value="#{lefttitle}" />
+				</f:facet>
+				<ui:insert name="left-panel">Left panel</ui:insert>
+
+			</p:layoutUnit>
+
+			<p:layoutUnit position="east" size="200" header="Right"
+				resizable="true" collapsible="true" effect="drop" gutter="2"
+				id="right">
+				<h:outputText value="Right unit content." />
+			</p:layoutUnit>
+
+		</p:layout>
+
 </h:body>
 </html>

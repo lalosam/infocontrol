@@ -1,0 +1,32 @@
+<ui:composition template="/WEB-INF/templates/simple-layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+		<form method="post" action="/InfoControl/login.jsf">
+			<p:spacer height="100px"/>
+			<p:panelGrid columns="2" styleClass="center notBorder" columnClasses="firstColumn, column"
+						 style="width: 250px;">
+				<f:facet name="header">
+					Login
+				</f:facet>
+				<p:outputLabel for="username" value="#{guiBundle.userNameLbl}:"/>
+				<p:inputText id="username" />
+				<p:outputLabel for="password" value="#{guiBundle.passwordLbl}:"/>
+				<p:password id="password" />
+			</p:panelGrid>
+			<p:spacer height="10px"/>
+			<div style="margin: 0 auto; position: relative; text-align: center">
+				<input type="submit" value="Login"/>
+			</div>
+			
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
+			
+		</form>
+	</ui:define>
+	<ui:define name="left-panel">
+	</ui:define>
+</ui:composition>

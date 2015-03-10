@@ -6,10 +6,11 @@ body {
 .ui-widget {
     font-size: 75%;
  }
-.ui-widget .ui-widget {
+
+/*.ui-widget .ui-widget {
     font-size: 100%;
  }
-
+*/
 .ui-layout-unit-header {
 	background: hsla(215, 44%, 46%, 1.0);
 	color: white;
@@ -18,7 +19,11 @@ body {
 #header .ui-layout-unit-content {
 	background: hsla(215, 44%, 46%, 1.0);
 	color: white;
-	font-size: 20px;
+}
+
+#footer .ui-layout-unit-content {
+	background: hsla(215, 44%, 46%, 1.0);
+	color: white;
 }
 
 #right .ui-layout-unit-content {
@@ -63,4 +68,24 @@ body {
 
 .ui-layout-west .ui-layout-unit-content {
 	overflow: visible !important;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.firstColumn {
+	text-align: right;
+	background-color: hsla(215, 44%, 46%, 1.0);
+	font-weight: bold;
+	color: hsla(360, 100%, 100%, 1);
+}
+
+.column {
+	text-align: center;
+}
+
+.notBorder td, .notBorder tr{
+	border: 0px solid white;
+	border-style: none;
 }
